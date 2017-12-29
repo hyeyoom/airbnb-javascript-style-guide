@@ -105,6 +105,7 @@
   - [2.1](#references--prefer-const) 모든 참조에 대해서는 `const`를 사용하고 var 사용을 피할 것. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
     > Why? This ensures that you can’t reassign your references, which can lead to bugs and difficult to comprehend code.
+
     > 왜냐하면 버그와 난해한 코드로 이어지는 참조 재할당 금지를 보장할 수 있다.
 
     ```javascript
@@ -122,6 +123,7 @@
   - [2.2](#references--disallow-var) 참조 재할당이 필요한 경우, `var` 대신 `let`을 사용할 것. eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
 
     > Why? `let` is block-scoped rather than function-scoped like `var`.
+
     > 왜냐하면 `var`는 함수 스코프인 반면 `let`은 블록 스코프이기 때문.
 
     ```javascript
@@ -173,6 +175,7 @@
   - [3.2](#es6-computed-properties) 동적 프로퍼티 이름으로 객체 생성 시, 계산된 프로퍼티 이름을 사용할 것
 
     > Why? They allow you to define all the properties of an object in one place.
+
     > 오브젝트의 모든 프로퍼티를 한 장소에서 정의할 수 있기 때문에.
 
     ```javascript
@@ -225,6 +228,7 @@
   - [3.4](#es6-object-concise) 프로퍼티 값 단축을 사용할 것. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
 
     > Why? It is shorter to write and descriptive.
+
     > 기술과 설명이 간결해지기 때문에.
 
     ```javascript
@@ -246,6 +250,7 @@
   - [3.5](#objects--grouped-shorthand) 객체 선언 시작부에 단축구문 프로퍼티를 그룹화할 것.
 
     > Why? It’s easier to tell which properties are using the shorthand.
+
     > 어느 프로퍼티가 단축구문을 사용하는지 명시하기 쉽기 때문에.
 
     ```javascript
@@ -278,6 +283,7 @@
   - [3.6](#objects--quoted-props) 유효하지 않은 식별자에 대한 프로퍼티만 따옴표를 사용할 것. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html) jscs: [`disallowQuotedKeysInObjects`](http://jscs.info/rule/disallowQuotedKeysInObjects)
 
     > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+
     > 일반적으로 읽기 쉽다고 여겨진다. 구문 강조를 향상시키며, 또한 많은 JS 엔진들이 보다 쉽게 최적화해주기 때문에.
 
     ```javascript
@@ -301,6 +307,7 @@
   - [3.7](#objects--prototype-builtins) `hasOwnProperty`, `propertyIsEnumerable`, `isPrototypeOf`와 같은 `Object.prototype` 메소드를 직접 호출하지 말 것
 
     > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+
     > 객체의 프로퍼티에 의해 이 메소드들이 가려질 수도 있기 때문에. `{ hasOwnProperty: false }`이나, 오브젝트가 null인 (`Object.create(null)`)상황을 생각해볼 것.
 
     ```javascript
@@ -508,6 +515,7 @@
   - [5.1](#destructuring--object) 객체의 여러 프로퍼티에 대해 접근 및 사용을 하는 경우 객체 비구조화를 사용할 것. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring) jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
 
     > Why? Destructuring saves you from creating temporary references for those properties.
+
     > 비구조화는 여러 프로퍼티에 대한 임시 참조를 생성하는 일을 막아주기 때문이다.  
 
     ```javascript
@@ -551,6 +559,7 @@
   - [5.3](#destructuring--object-over-array) 여러 값들을 리턴하기 위해 배열 비구조화가 아닌, 객체 비구조화를 사용할 것. jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
 
     > Why? You can add new properties over time or change the order of things without breaking call sites.
+
     > 언제든 새로운 프로퍼티를 추가하거나 호출자(call sites) 손상 없이 순서를 변경할 수 있기 때문이다.  
 
     ```javascript
@@ -597,6 +606,7 @@
   - [6.2](#strings--line-length) 한 줄에 100자를 초과하는 문자열을 문자열 연결을 사용해 여러줄에 걸쳐서 작성해서는 안된다.
 
     > Why? Broken strings are painful to work with and make code less searchable.
+
     > 찢어진 문자열은 작업하기도 고통스러울 뿐더러 찾기도 힘들어지기 때문이다.
 
     ```javascript
@@ -620,6 +630,7 @@
   - [6.3](#es6-template-literals) 코드상에서 문자열을 생성하는 경우, 연결(concatenation) 대신에 템플릿 문자열을 사용할 것. eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
 
     > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+
     > 템플릿 문자열은 가독성, 적절한 개행과 문자열 보간 기능을 통한 간결한 구문을 제공하기 때문에.
 
     ```javascript
@@ -653,6 +664,7 @@
   - [6.5](#strings--escaping) 문자열에서 불필요한 이스케이프 문자를 쓰지 마라. eslint: [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
 
     > Why? Backslashes harm readability, thus they should only be present when necessary.
+
     > 백슬래시는 가독성을 망치므로 필요한 곳에서만 사용해야한다.
 
     ```javascript
@@ -673,6 +685,7 @@
   - [7.1](#functions--declarations) 함수 선언 대신 명명된 함수 표현식을 사용할 것. eslint: [`func-style`](https://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
 
     > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error's call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
+
     > 함수 선언은 호이스팅(컨텍스트에서 최상위로 올리는 것)되는데, 이는 파일 내에서 정의되기 전에 함수가 참조가 아주 쉬워진다는 것을 의미한다. 이는 가독성 및 유지보수를 떨어뜨린다. 함수의 정의가 크고 복잡해, 파일의 나머지 부분에 대한 이해가 힘든 경우 이를 모듈로 추출해야할 지도 모른다. 이름이 포함된 변수에서 추측할 수 있는지 여부와는 관계 없이(이는 최신 브라우저나 바벨과 같은 컴파일러 사용 시 종종 발생함) 표현식 이름을 명시적으로 명명하는 것을 잊지 마라. 이는 에러 호출 스택의 모든 가정을 제거한다.  
 
     ```javascript
@@ -698,6 +711,7 @@
   - [7.2](#functions--iife) 바로 호출하는 함수식은 괄호로 감쌀 것. eslint: [`wrap-iife`](https://eslint.org/docs/rules/wrap-iife.html) jscs: [`requireParenthesesAroundIIFE`](http://jscs.info/rule/requireParenthesesAroundIIFE)
 
     > Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. Note that in a world with modules everywhere, you almost never need an IIFE.
+
     > 즉시 호출 함수 표현식(IIFE)는 두 가지(역자: 선언과 표현)를 감싸는 단일 유닛이며, 괄호로 묶어 깔끔하게 표현한다. 모듈이 어디에나 있는 경우에는 거의 필요가 없다.
 
     ```javascript
@@ -753,6 +767,7 @@
   - [7.6](#es6-rest) `arguments`를 사용하지 말 것, 대신 `...`를 사용해라. eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
 
     > Why? `...` is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like `arguments`.
+
     > `...`는 어떤 인자를 사용하는지 명시할 수 있습니다. 덧붙여 나머지 파라미터는 `arguemtns`와 같은 배열류가 아니고 진짜 배열이다.  
 
     ```javascript
@@ -801,6 +816,7 @@
   - [7.8](#functions--default-side-effects) 사이드 이펙트가 존재하는 디폴트 파라미터는 지양할 것.
 
     > Why? They are confusing to reason about.
+
     > 혼란을 초래하기 때문
 
     ```javascript
@@ -836,6 +852,7 @@
   - [7.10](#functions--constructor) 새 함수 생성을 위해 함수 생성자 사용을 하지 말 것. eslint: [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
 
     > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+
     > 이 방법으로 함수를 생성해서 문자열을 연산하는 것은 eval()과 동등한 취약점을 가진다.  
 
     ```javascript
@@ -851,6 +868,7 @@
   - [7.11](#functions--signature-spacing) 함수 시그니처 공백. eslint: [`space-before-function-paren`](https://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks)
 
     > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+
     > 일관성이 좋으며, 이름을 추가하거나 지우는 경우, 공백을 넣거나 지울 필요가 없기 때문이다. (역자: 쓸모less...)  
 
     ```javascript
@@ -869,6 +887,7 @@
   - [7.12](#functions--mutate-params) 파라미터 변경을 금지한다. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+
     > 파라미터로 전달로 객체를 조작하는 것은 호출자에게 원하지 않는 변수 사이드 이펙트 발생을 초래할 수 있기 때문에.
 
     ```javascript
@@ -888,6 +907,7 @@
   - [7.13](#functions--reassign-params) 파라미터 재할당을 금지한다. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8.
+
     > 파라미터 재할당은 예상치 못한 동작으로 이어질 수 있으며, 특히 `arguments`를 사용하는 경우를 예로 들 수 있다. 또한 V8에서 최적화에 문제가 발생할 수 있다.  
 
     ```javascript
@@ -918,6 +938,7 @@
   - [7.14](#functions--spread-vs-apply) 가변적 함수 호출보다는 스프레드 연산자 `...` 사용을 선호할 것. eslint: [`prefer-spread`](https://eslint.org/docs/rules/prefer-spread)
 
     > Why? It’s cleaner, you don’t need to supply a context, and you can not easily compose `new` with `apply`.
+
     > 더 깔끔하고, 컨텍스트 제공이 필요가 없으며 `apply`로 `new` 구성을 쉽게 할 필요가 없기 때문
 
     ```javascript
@@ -979,9 +1000,11 @@
   - [8.1](#arrows--use-them) 익명함수를 반드시 사용해야하는 경우(인라인 콜백 전달과 같이), 애로우 함수 노테이션을 사용할 것. eslint: [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](https://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
 
     > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+
     > `this`의 컨텍스트에서 실행되는 함수의 버전을 생성하기 때문이다. 이는 보통 의도대로 동작하며 보다 간결한 구문이다.  
 
     > Why not? If you have a fairly complicated function, you might move that logic out into its own named function expression.
+
     > 어느 경우에? 복잡한 함수를 로직을 정의한 함수식 바깥으로 뺄 때
 
     ```javascript
@@ -1003,6 +1026,7 @@
   - [8.2](#arrows--implicit-return) 함수 바디가 사이드 이펙트가 없는 [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)을 반환하는 단일 문인 경우, 중괄호를 생략하고 암시적으로 반환해라. 그 외에는 중괄호와 `return`문을 사용해라. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
 
     > Why? Syntactic sugar. It reads well when multiple functions are chained together.
+
     > Syntactic sugar이기 때문. 여러 함수가 연결된 경우 읽기 수월해진다.
 
     ```javascript
@@ -1050,6 +1074,7 @@
   - [8.3](#arrows--paren-wrap) 식이 여러줄에 걸쳐있는 경우, 가독성을 위해 괄호로 감싸자.  
 
     > Why? It shows clearly where the function starts and ends.
+
     > 함수의 시작과 끝이 분명히 보이기 때문에
 
     ```javascript
@@ -1074,6 +1099,7 @@
   - [8.4](#arrows--one-arg-parens) 함수가 단일 인자를 취하고 중괄호를 사용하지 않는 경우, 괄호를 제거해라. Note: [“always” option](https://eslint.org/docs/rules/arrow-parens#always)을 사용하는 경우에 괄호를 항상 사용하는 것은 허용된다. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
 
     > Why? Less visual clutter.
+
     > 보기 덜 불편하기 때문
 
     ```javascript
@@ -1131,6 +1157,7 @@
   - [9.1](#constructors--use-class) 항상 `class`를 사용할 것. `prototype`을 직접 생성하는 것을 피할 것.
 
     > Why? `class` syntax is more concise and easier to reason about.
+
     > `class` 구문이 더 간결하고 명확하기 때문.
 
     ```javascript
@@ -1162,6 +1189,7 @@
   - [9.2](#constructors--extends) 상속을 위해 `extends`를 사용할 것.
 
     > Why? It is a built-in way to inherit prototype functionality without breaking `instanceof`.
+
     > `instanceof`를 깨지 않고 프로토타입 기능 상속을 위해 내장된 방법이기 때문.
 
     ```javascript
@@ -1276,6 +1304,7 @@
   - [9.6](#classes--no-duplicate-members) 클래스 멤버 중복을 피할 것. eslint: [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
 
     > Why? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
+
     > 중복된 클래스 멤버 선언은 묵시적으로 마지막 것을 따르며, 중복은 대부분 확실히 버그이다.  
 
     ```javascript
@@ -1305,6 +1334,7 @@
   - [10.1](#modules--use-them) 비표준 모듈 시스템이 아니라면 (`import`/`export`)을 항상 사용할 것. 이렇게 해야 항상 선호하는 모듈 시스템으로 옮겨갈 수 있다.
 
     > Why? Modules are the future, let’s start using the future now.
+
     > 모듈이 미래이니, 미래를 지금부터 사용하자.
 
     ```javascript
@@ -1326,6 +1356,7 @@
   - [10.2](#modules--no-wildcard) 와일드 카드 임포트를 사용하지 말 것
 
     > Why? This makes sure you have a single default export.
+
     > 이는 단일 기본 익스포트가 있음을 보장하기 때문에.
 
     ```javascript
@@ -1341,6 +1372,7 @@
   - [10.3](#modules--no-export-from-import) 임포트와 동시에 익스포트 하지 말 것
 
     > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+
     > 한 줄이 명확하긴 하더라도, 명확한 한 가지 방법으로 임포트하고 익스포트하는 것이 일관성을 유지시켜주기 때문에.
 
     ```javascript
@@ -1361,6 +1393,7 @@
  eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
  
     > Why? Having multiple lines that import from the same path can make code harder to maintain.
+
     > 동일한 경로에서 여러 줄에 걸쳐 임포트하는 경우 코드 유지보수가 더 어려워질 수 있기 때문에
 
     ```javascript
@@ -1386,6 +1419,7 @@
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
 
     > Why? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
+
     > 일반적으로 변경은 피해야하며, 특히 뮤터블 바인딩을 익스포트 할 때는 더 피해야한다. 일부 특수한 클래스의 경우 필요한 경우가 있을 수도 있지만, 일반적으로 상수 참조만 익스포트되어야 한다.  
 
     ```javascript
@@ -1405,6 +1439,7 @@
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
 
     > Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
+
     > 가독성과 유지보수를 위해 한 가지만 익스포트하는 파일을 권장하기 위해
 
     ```javascript
@@ -1423,6 +1458,7 @@
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
 
     > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
+
     > `import`는 호이스팅되기 때문에, 모두 상단에 위치시켜 헛짓거리를 막기 위해서.
 
     ```javascript
@@ -1444,6 +1480,7 @@
   - [10.8](#modules--multiline-imports-over-newlines) 여러 줄에 걸친 임포트는 다른 멀티라인 배열과 객체 리터럴처럼 들여써야한다.  
 
     > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+
     > 이 스타일 가이드의 다른 중괄호 블록 스타일과 마찬가지로 동일한 들여쓰기 룰을 따르며, 후행 콤마도 마찬가지다.  
 
     ```javascript
@@ -1467,6 +1504,7 @@
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
     > Why? Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
+
     > 임포트에서 웹팩 구문을 사용하면 코드가 모듈 번들러에 종속된다. `webpack.config.js`에서 로더 구문 사용을 권장한다.  
 
     ```javascript
@@ -1488,7 +1526,10 @@
   - [11.1](#iterators--nope) 이터레이터를 사용하지 말 것. `for-in`나 `for-of`와 같은 루프 대신 자바 스크립트의 고차원함수를 권장한다. eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
 
     > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+
     > 이는 불변 룰을 강제하기 때문이다. 반환 값이 있는 순수 함수를 다룰 때 사이드 이펙트 찾기가 더 쉬워진다.  
+
+    > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
 
     > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
 
@@ -1541,6 +1582,7 @@
   - [11.3](#generators--spacing) 정말로 제너레이터가 필요하거나, 이 문서의 충고를 따르지 않는 경우, 스페이스가 적절하게 되어 있는지 확실히 해라. eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
 
     > Why? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
+
     > `function`와 `*`는 개념적으로 동등한 키워드의 일부이기 때문이다. `*`는 `function`을 수식어가 아니며, `function*`은 `function`과 다른 고유한 구조이다.  
 
     ```javascript
@@ -1669,6 +1711,7 @@
   - [13.2](#variables--one-const) 변수 선언 당 `const`나 `let`를 사용할 것. eslint: [`one-var`](https://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
 
     > Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+
     > 이렇게 하면 새 변수 선언 추가가 용이해지고, `,`를 `;`로 바꿀 걱정을 할 필요가 없어진다. 또한 디버깅 시에 한 번에 모두를 건너 뛰는게 아니라 각 선언을 단계별로 실행할 수 있다.  
 
     ```javascript
@@ -1694,6 +1737,7 @@
   - [13.3](#variables--const-let-group) 모든 `const`를 그룹화하고 난 후 `let`를 그룹화해라.
 
     > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
     > 차후에 이전에 할당한 변수 중 하나에 변수를 할당하는 경우 유용하다.
 
 
@@ -1723,6 +1767,7 @@
   - [13.4](#variables--define-where-used) 필요한 경우에만 변수 할당을 하고, 이치에 맞는 곳에 두어라.  
 
     > Why? `let` and `const` are block scoped and not function scoped.
+
     > `let`과 `const`가 함수 스코프가 아닌 블록 스코프이기 때문이다.
 
     ```javascript
@@ -1763,6 +1808,7 @@
   - [13.5](#variables--no-chain-assignment) 여러 변수를 한 번에 할당을 하지 말 것. eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
     > Why? Chaining variable assignments creates implicit global variables.
+
     > 변수 연쇄 할당은 묵시적으로 전역 변수를 만든다.  
 
     ```javascript
@@ -1798,6 +1844,7 @@
   - [13.6](#variables--unary-increment-decrement) 단항 증감 연산자 사용을 피할 것. eslint [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
 
     > Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+
     > eslint 도큐로 단항 증가와 감소 문(statement)은 자동 세미콜론 삽입으로 애플리케이션에서 값 증감에 따른 잠재적 에러를 야기할 수 있다. 또한 `num++`이나 `num ++`대신 `num += 1`과 같은 문장으로 값 변경을 더 잘 표현할 수 있다. 또한 단항 증감 문장 금지는 예상치 못한 동작을 야기할 수 있는 값 선증가/선감소를 막아준다.  
 
     ```javascript
@@ -2011,6 +2058,7 @@
   - [15.5](#comparison--switch-blocks) 중괄호를 사용해 어휘적 선언을 포함하는 `case`와 `default`절을 만들자. eslint: [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations.html)
 
     > Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
+
     > 어휘적 선언은 `switch` 블록 전체에서 가시적이지만, `case`에 도달한 경우에 한해서만 할당될 때 초기화된다. 이는 여러 `case`절에서 동일한 것을 정의하려는 경우에 문제를 야기시킬 수 있다.
 
     ```javascript
@@ -2099,6 +2147,7 @@
   - [15.8](#comparison--no-mixed-operators) 한 문장에 섞여 있는 경우 연산자를 괄호로 묶어라. 산술 연산자가 섞여 있는 경우 `**와 `%`는 문장이나 `+`, `-`, `*`, `/`와 섞지 않는다. eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
 
     > Why? This improves readability and clarifies the developer’s intention.
+
     > 가독성을 향상시키며 개발자의 의도를 명확하게 할 수 있기 때문에.
 
     ```javascript
@@ -2257,6 +2306,7 @@
   - [17.1](#control-statements) 제어문(`if`, `while`, 등)이 너무 길어지거나 최대 라인을 초과하는 경우, 각 그룹의 조건을 새로운 라인에 둘 수 있다. 논리 연산자가 라인이 시작부분에 와야한다.
 
     > Why? Requiring operators at the beginning of the line keeps the operators aligned and follows a pattern similar to method chaining. This also improves readability by making it easier to visually follow complex logic.
+
     > 라인의 시작부에 해당 연산자는 연산자를 정렬하고, 메소드 체이닝과 비슷한 패턴을 따르게 된다. 또한 복잡한 로직을 읽게 쉽게 만들어 가독성이 올라간다.
 
     ```javascript
@@ -2775,6 +2825,7 @@
   - [19.12](#whitespace--max-len) 코드의 라인들이 100자를 넘지 않게 해라. Note: Note: per [above](#strings--line-length), 이 룰에서 긴 문자열은 제외한다. 문자열은 찢어서는 안된다. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
 
     > Why? This ensures readability and maintainability.
+
     > 가독성과 유지보수를 보장할 수 있기 때문에.
 
     ```javascript
@@ -2847,6 +2898,7 @@
   - [20.2](#commas--dangling) 끝에 붙는 추가적인 콤마: **ㅆㅇㅈ** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
 
     > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+
     > 이는 git diff가 깔끔해지게 해준다. 또한 바벨(Babel)같은 트랜스파일러들이 끝에 딸린 콤마는 제거해주기 때문에 걱정 할 필요가 없다.
 
     ```diff
@@ -2949,6 +3001,7 @@
   - [21.1](#semicolons--required) **ㅇㅇ 써라** eslint: [`semi`](https://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
 
     > Why? When JavaScript encounters a line break without a semicolon, it uses a set of rules called [Automatic Semicolon Insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) to determine whether or not it should regard that line break as the end of a statement, and (as the name implies) place a semicolon into your code before the line break if it thinks so. ASI contains a few eccentric behaviors, though, and your code will break if JavaScript misinterprets your line break. These rules will become more complicated as new features become a part of JavaScript. Explicitly terminating your statements and configuring your linter to catch missing semicolons will help prevent you from encountering issues.
+
     > `Javascript`는 세미 콜론 없이 종료된 문장을 만난 경우, [Automatic Semicolon Insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion)이라는 룰 셋을 사용해서 줄 바꿈을 문장의 끝으로 간주하고, 줄 바꿈 문자 앞에 세미 콜론을 위치시킨다(룰 셋의 이름처럼). ASI에는 약간 괴동작이 있긴 하지만 줄 바꿈을 잘못 해석하는 경우 코드가 박살난다. 이러한 룰들은 새 기능이 `Javascript`의 일부가 되는 경우 더 복잡해진다. 문장 끝에 명시해주고 린트(Linter) 설정으로 누락된 세미 콜론을 잡아내면 이러한 문제들을 방지하는데 도움이 될 것이다.
 
     ```javascript
@@ -3152,6 +3205,7 @@
   - [23.4](#naming--leading-underscore) 언더 스코어는 앞이나 끝에 쓰지 마라. eslint: [`no-underscore-dangle`](https://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
 
     > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
+    
     > 자바스크립트는 프로퍼티나 메소드에 대해 소유라는 개념을 가지고 있지 않다. 첫 번째 밑줄은 일반적으로 `private`을 의미하는 규칙이긴 하지만, 이러한 프로퍼티들은 전적으로 퍼블릭이다. 따라서 이는 퍼블릭 API의 일부이다. 이러한 규칙은 개발자가 변경 사항을 위반으로 간주하지 않거나, 테스트가 필요 없다고 잘못 생각하게 할 수도 있다. `private`같은 무언가를 원한다면, 응 그런건 없어.
 
     ```javascript
