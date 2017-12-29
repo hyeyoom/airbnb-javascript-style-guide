@@ -105,6 +105,7 @@
   - [2.1](#references--prefer-const) 모든 참조에 대해서는 `const`를 사용하고 var 사용을 피할 것. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
     > Why? This ensures that you can’t reassign your references, which can lead to bugs and difficult to comprehend code.
+    
     > 왜냐하면 버그와 난해한 코드로 이어지는 참조 재할당 금지를 보장할 수 있다.
 
     ```javascript
